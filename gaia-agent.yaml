@@ -1,0 +1,17 @@
+# gaia-agent.yaml
+
+agent:
+  name: "weather_agent"
+  version: "1.0.0"
+
+llm:
+  provider: "lemonade"
+  model: "Gemma-4-E4B-it-GGUF"
+  base_url: "http://ai.core.lan:8080/api/v1"
+  api_key: ""
+  temperature: 0.2
+  max_tokens: 32000
+
+system:
+  download_assets: false
+  skip_model_verification: true

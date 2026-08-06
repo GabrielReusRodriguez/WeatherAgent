@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weather_agent"
+version = "0.1.0"
+description = "Weather forecast agent powered by amd-gaia, Open-Meteo and Nominatim"
+authors = [{ name = "Gabriel" }]
+license = { text = "GPL-3.0-only" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "amd-gaia>=0.21.2",
+    "requests",
+]
+
+[project.entry-points."gaia.agent"]
+weather_agent = "weather_agent:build_registration"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["weather_agent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
